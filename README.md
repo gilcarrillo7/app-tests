@@ -1,27 +1,25 @@
-# AppTests
+# Application Tests
+## Pasos para ejecutar la aplicacion:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+1. Instalar dependencias
 
-## Development server
+```console
+npm i
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. Correr en desarrollo
 
-## Code scaffolding
+```console
+npm run start
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Abrir navegador en [http://localhost:4200/](://localhost:4200/)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usar la aplicacioón
+Los ejercicios están dentro de la misma aplicación en diferentes modulos.
+1. Test 1, corresponde al módulo Weather
+2. Test 2, corresponde al módulo Sunday
+3. Test 3, corresponde al módulo Leap-year
+4. Test 4, corresponde al módulo Matrix
+5. Test 5, corresponde al módulo Count-letter
+6. Test 6, corresponde al módulo Routes

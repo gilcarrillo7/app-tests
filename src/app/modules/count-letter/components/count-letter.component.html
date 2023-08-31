@@ -1,0 +1,31 @@
+<div class="flex flex-col sm:flex-row gap-4">
+  <div class="sm:w-1/2 mb-8 sm:mb-0">
+    <h2 class="mb-4 font-bold text-2xl">Test 5: Conteo Letras</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col rounded-md overflow-hidden w-full">
+          <label for="wide">Cadena</label>
+          <textarea
+            name="word"
+            type="text"
+            class="w-full rounded-md px-4 text-black mt-2"
+            [(ngModel)]="word"
+            required
+          ></textarea>
+        </div>
+        <button
+          class="bg-indigo-600 text-white px-6 text-lg font-semibold py-4 rounded-md w-full"
+        >
+          Calcular
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    class="sm:w-1/2 flex items-center flex flex-col gap-2 justify-center items-center break-all"
+  >
+    <div *ngFor="let entry of letterList | keyvalue">
+      <p class="text-xl text-center">"{{ entry.key }}" : {{ entry.value }}</p>
+    </div>
+  </div>
+</div>

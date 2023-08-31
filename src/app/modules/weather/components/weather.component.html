@@ -1,0 +1,54 @@
+<div class="flex flex-col sm:flex-row gap-4">
+  <div class="sm:w-1/2 mb-8 sm:mb-0">
+    <h2 class="mb-4 font-bold text-2xl">Test 1: Pronóstico del Clima</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col rounded-md overflow-hidden w-full">
+          <label for="wide">Latitud</label>
+          <input
+            name="lat"
+            type="number"
+            class="w-full rounded-md px-4 text-black mt-2"
+            [(ngModel)]="lat"
+            required
+          />
+        </div>
+        <div class="flex flex-col rounded-md overflow-hidden w-full">
+          <label for="wide">Longitud</label>
+          <input
+            name="lon"
+            type="number"
+            class="w-full rounded-md px-4 text-black mt-2"
+            [(ngModel)]="lon"
+            required
+          />
+        </div>
+        <button
+          class="bg-indigo-600 text-white px-6 text-lg font-semibold py-4 rounded-md w-full"
+        >
+          <app-loader *ngIf="loading"></app-loader>
+          <span *ngIf="!loading">Buscar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    *ngIf="place !== ''"
+    class="sm:w-1/2 flex items-center flex flex-col gap-2 justify-center"
+  >
+    <p class="font-bold">Localización:</p>
+    <p class="">{{ place }}</p>
+    <p class="font-bold">Pronóstico:</p>
+    <div *ngFor="let hora of weather" class="flex gap-2">
+      <p>Hora: {{ getDate(hora.dt) }}</p>
+      <p>|</p>
+      <p>Temperatura: {{ hora.temp }} º</p>
+    </div>
+  </div>
+  <div
+    *ngIf="error !== ''"
+    class="sm:w-1/2 flex items-center flex flex-col gap-2 justify-center break-all"
+  >
+    <p class="text-red-500 text-lg font-semibold">{{ error }}</p>
+  </div>
+</div>

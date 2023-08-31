@@ -1,0 +1,46 @@
+<div class="flex flex-col sm:flex-row gap-4">
+  <div class="sm:w-1/2 mb-8 sm:mb-0">
+    <h2 class="mb-4 font-bold text-2xl">Test 2: Cálculo de domingos</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col rounded-md overflow-hidden w-full">
+          <label for="wide">Fecha Inicio</label>
+          <input
+            name="inicio"
+            type="date"
+            class="w-full rounded-md px-4 text-black mt-2"
+            [(ngModel)]="inicio"
+            [max]="fin"
+            required
+          />
+        </div>
+        <div class="flex flex-col rounded-md overflow-hidden w-full">
+          <label for="wide">Fecha Fin</label>
+          <input
+            name="fin"
+            type="date"
+            class="w-full rounded-md px-4 text-black mt-2"
+            [(ngModel)]="fin"
+            [min]="inicio"
+            required
+          />
+        </div>
+        <button
+          class="bg-indigo-600 text-white px-6 text-lg font-semibold py-4 rounded-md w-full"
+          [disabled]="inicio === '' || fin === ''"
+        >
+          Calcular
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    *ngIf="dias !== 0"
+    class="sm:w-1/2 flex items-center flex flex-col gap-2 justify-center items-center"
+  >
+    <p class="text-xl text-center">
+      En total existen <span class="font-bold text-3xl">{{ dias }}</span> meses
+      donde el último día es domingo, entre las fechas ingresadas
+    </p>
+  </div>
+</div>
