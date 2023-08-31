@@ -23,3 +23,6 @@ Los ejercicios están dentro de la misma aplicación en diferentes modulos.
 4. Test 4, corresponde al módulo Matrix
 5. Test 5, corresponde al módulo Count-letter
 6. Test 6, corresponde al módulo Routes
+
+## Extra
+Se puede revisar la aplicación desde [Sandbox](https://codesandbox.io/p/github/gilcarrillo7/app-tests)
